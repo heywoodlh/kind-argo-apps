@@ -43,14 +43,14 @@ destroy_cluster() {
     kind delete cluster --name=argo-apps
 }
 
-if ! kind get clusters | grep -q argo-apps
+if kind get clusters | grep -q argo-apps
 then
     echo "argo-apps kind cluster already installed -- destroy it and start over? (y/n)"
     read destroy_response
 
     if [[ ${destroy_response} == "y" ]] || [[ ${destroy_response} == "Y" ]]
     then
-	destroy_cluster && echo 'argo-apps cluster destroyed' && create cluster
+	destroy_cluster && echo 'argo-apps cluster destroyed' && create_cluster
     fi
 else
     create_cluster
