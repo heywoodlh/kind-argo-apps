@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "msfbox.fullname" . }}
+  labels:
+    {{- include "msfbox.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.ssh.port }}
+      targetPort: 22
+      protocol: TCP
+      name: http
+    - port: {{ .Values.service.http.port }}
+      targetPort: 4200
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "msfbox.selectorLabels" . | nindent 4 }}
