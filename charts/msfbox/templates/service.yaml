@@ -10,7 +10,7 @@ spec:
     - port: {{ .Values.service.ssh.port }}
       targetPort: 22
       protocol: TCP
-      name: http
+      name: ssh
     - port: {{ .Values.service.http.port }}
       targetPort: 4200
       protocol: TCP
