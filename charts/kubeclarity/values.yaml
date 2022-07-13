@@ -41,7 +41,7 @@ kubeclarity:
     enableDBInfoLog: false
   
     service:
-      type: LoadBalancer
+      type: clusterIP 
   
     resources:
       requests:
