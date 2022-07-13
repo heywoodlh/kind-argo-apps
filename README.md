@@ -17,3 +17,23 @@ git clone https://github.com/heywoodlh/argo-apps
 cd argo-apps
 ./kind.sh
 ```
+
+Make sure you are in the context for the cluster with the following command:
+
+```
+kubectl config use-context kind-argo-apps
+```
+
+### Accessing Argo CD:
+
+Run the following command to access Argo at http://localhost:8080:
+
+```
+kubectl port-forward svc/argo-cd-argocd-server 8080:443
+```
+
+Then get the password for the `admin` user in Argo:
+
+```
+kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
