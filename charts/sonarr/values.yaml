@@ -1,0 +1,51 @@
+sonarr:
+  global:
+    nameOverride: "sonarr"
+    fullnameOverride: "sonarr"
+  controller:
+    enabled: true
+    type: deployment
+    replicas: 1
+  image:
+    repository: linuxserver/sonarr
+    pullPolicy: IfNotPresent
+    tag: "3.0.8"
+  service:
+    main:
+      enabled: true 
+      primary: true
+      type: LoadBalancer 
+      loadBalancerIP: 10.0.60.14
+      ports:
+        http:
+          primary: true
+          enabled: true
+          port: 80
+          targetPort: 8989 
+#  nodeSelector: 
+#    kubernetes.io/hostname: apps
+  persistence:
+    config:
+      enabled: false
+      type: pvc
+      mountPath: /config
+      size: 1Gi
+      retain: true
+      storageClass: nfs-client
+    downloads:
+      enabled: false
+      type: emptyDir
+      mountPath: /downloads
+      retain: false
+    media:
+      enabled: false
+      existingClaim: nfs-media 
+      mountPath: /media
+      retain: true
+  env:
+    - name: PUID
+      value: 1000
+    - name: PGID
+      value: 1000
+    - name: TZ
+      value: "America/Denver"
