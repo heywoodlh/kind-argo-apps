@@ -24,7 +24,9 @@ Make sure you are in the context for the cluster with the following command:
 kubectl config use-context kind-argo-apps
 ```
 
-### Accessing Argo CD:
+## Accessing Services:
+
+### Argo CD:
 
 Run the following command to access Argo at http://localhost:8080:
 
@@ -36,4 +38,12 @@ Then get the password for the `admin` user in Argo:
 
 ```
 kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+
+### Kubeclarity:
+
+Run the following command to access Kubeclarity at http://localhost:8080
+
+```
+kubectl port-forward svc/kubeclarity-kubeclarity 8080:8080
 ```
