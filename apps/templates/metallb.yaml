@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: charts/metallb
-    repoURL: https://github.com/heywoodlh/gitops
+    repoURL: https://github.com/heywoodlh/argo-apps
     targetRevision: HEAD
   syncPolicy:
     automated:
