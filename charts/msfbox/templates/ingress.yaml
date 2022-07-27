@@ -43,7 +43,7 @@ spec:
           path: {{ .Values.ingress.path }}
           backend:
             service:
-              name: "{{ $fullName }}-http"
+              name: msfbox
               port:
                 number: 80
 {{- end }}
