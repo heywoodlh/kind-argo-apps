@@ -268,7 +268,7 @@ nginx-ingress:
         enable: true
   
         ## The HTTP port of the Ingress Controller service.
-        port: 9080
+        port: 80
   
         ## The custom NodePort for the HTTP port. Requires controller.service.type set to NodePort.
         nodePort: ""
@@ -281,7 +281,7 @@ nginx-ingress:
         enable: true
   
         ## The HTTPS port of the Ingress Controller service.
-        port: 9443
+        port: 443
   
         ## The custom NodePort for the HTTPS port. Requires controller.service.type set to NodePort.
         nodePort: ""
