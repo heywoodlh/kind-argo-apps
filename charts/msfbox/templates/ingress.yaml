@@ -39,7 +39,7 @@ spec:
   rules:
   - http:
       paths: 
-        - Pathtype: {{ .Values.ingress.pathType }}
+        - pathType: {{ .Values.ingress.pathType }}
           path: {{ .Values.ingress.path }}
           backend:
             service:
