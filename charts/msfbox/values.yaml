@@ -45,7 +45,6 @@ service:
 
 ingress:
   enabled: true
-  className: "contour"
   annotations:
     kubernetes.io/ingress.class: contour
   path: /msfbox
