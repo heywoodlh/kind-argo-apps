@@ -16,6 +16,11 @@ done
 
 [[ -n "${missing_deps[@]}" ]] && printf "Missing the following dependencies: ${missing_deps[@]} \nExiting.\n" && exit 1
 
+create_network() {
+    docker network ls | grep -q kind && docker network rm kind
+    docker network create --driver=bridge --ip-range=172.28.5.0/24 --subnet=172.28.0.0/16 --gateway=172.28.5.1 kind
+}
+
 create_cluster() {
     kind create cluster --name=argo-apps
     create_status=$?
@@ -41,6 +46,7 @@ create_cluster() {
 
 destroy_cluster() {
     kind delete cluster --name=argo-apps
+    docker network rm kind
 }
 
 if kind get clusters | grep -q argo-apps
@@ -53,5 +59,6 @@ then
 	destroy_cluster && echo 'argo-apps cluster destroyed' && create_cluster
     fi
 else
+    create_network
     create_cluster
 fi
