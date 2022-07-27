@@ -41,8 +41,12 @@ kubeclarity:
     enableDBInfoLog: false
   
     service:
-      type: ClusterIP 
-  
+      type: ClusterIP
+
+  ingress:
+    enabled: true
+    paths: 
+      - /kubeclarity
     resources:
       requests:
         memory: "200Mi"
