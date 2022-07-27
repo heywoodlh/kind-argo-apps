@@ -24,6 +24,12 @@ Make sure you are in the context for the cluster with the following command:
 kubectl config use-context kind-argo-apps
 ```
 
+The cluster takes a few minutes to deploy all the applications, watch its progress with this command:
+
+```
+watch kubectl get applications
+```
+
 ## Accessing Services:
 
 ### Argo CD:
