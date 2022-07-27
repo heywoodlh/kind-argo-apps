@@ -46,14 +46,10 @@ service:
 ingress:
   enabled: true
   className: "contour"
-  port: 80
   annotations:
     kubernetes.io/ingress.class: contour
-  hosts: 
-  - host: '*'
-    paths:
-    - path: /msfbox
-      pathType: Prefix
+  path: /msfbox
+  pathType: Prefix
 
   tls: []
   #  - secretName: chart-example-tls
