@@ -45,5 +45,5 @@ spec:
             service:
               name: msfbox
               port:
-                number: 4200
+                number: 80
 {{- end }}
