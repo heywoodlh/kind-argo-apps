@@ -2,7 +2,7 @@ argo-cd:
   installCRDs: false
   global:
     image:
-      tag: v2.1.6
+      tag: v2.1.16
   nodeSelector: 
     kubernetes.io/hostname: master
   dex:
