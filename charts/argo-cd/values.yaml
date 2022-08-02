@@ -3,8 +3,7 @@ argo-cd:
   global:
     image:
       tag: v2.1.16
-  nodeSelector: 
-    kubernetes.io/hostname: master
+      repository: docker.io/argoproj/argocd
   dex:
     enabled: true
   server:
