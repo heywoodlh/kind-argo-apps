@@ -18,7 +18,7 @@ argo-cd:
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
     ingress:
-      enabled: true
+      enabled: false
       paths:
         - /argocd
       pathType: Prefix
