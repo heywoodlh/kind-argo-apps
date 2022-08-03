@@ -1,0 +1,14 @@
+{{- if .Values.httpProxy.enabled -}}
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: {{ $fullName }}
+  namespace: default
+spec:
+  routes:
+    - conditions:
+      - prefix: {{ .Values.httpProxy.path }} 
+      services:
+        - name: {{ include "msfbox.fullname" . }} 
+          port: {{ .Values.service.http.port }}  
+{{- end }}

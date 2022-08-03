@@ -43,8 +43,12 @@ service:
   ssh:
     port: 22
 
-ingress:
+httpProxy:
   enabled: true
+  path: /msfbox
+
+ingress:
+  enabled: false
   className: "contour"
   annotations: {}
   path: /msfbox*
