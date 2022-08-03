@@ -7,7 +7,7 @@ metadata:
 spec:
   routes:
     - conditions:
-      - prefix: {{ .Values.httpProxy.path }} 
+      - prefix: {{ .Values.ingress.path }} 
       services:
         - name: {{ include "msfbox.fullname" . }} 
           port: {{ .Values.service.http.port }}  
