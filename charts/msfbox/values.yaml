@@ -47,7 +47,7 @@ ingress:
   enabled: true
   className: "contour"
   annotations: {}
-  path: /
+  path: /msfbox*
   pathType: Prefix
 
   tls: []
