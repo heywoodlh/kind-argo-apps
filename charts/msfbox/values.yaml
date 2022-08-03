@@ -39,7 +39,7 @@ securityContext: {}
 service:
   type: ClusterIP
   http:
-    port: 80
+    port: 9999
   ssh:
     port: 22
 
