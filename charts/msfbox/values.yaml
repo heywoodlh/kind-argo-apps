@@ -43,21 +43,9 @@ service:
   ssh:
     port: 22
 
-httpProxy:
+ingress:
   enabled: true
   path: /msfbox
-
-ingress:
-  enabled: false
-  className: "contour"
-  annotations: {}
-  path: /msfbox*
-  pathType: Prefix
-
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
