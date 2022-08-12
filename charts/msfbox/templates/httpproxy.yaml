@@ -9,6 +9,6 @@ spec:
     - services:
       - name: {{ include "msfbox.fullname" . }} 
         port: {{ .Values.service.http.port }}  
-    - conditions:
+      conditions:
       - prefix: {{ .Values.ingress.path }} 
 {{- end }}
