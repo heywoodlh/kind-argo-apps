@@ -45,7 +45,7 @@ service:
 
 ingress:
   enabled: true
-  className: contour
+  className: nginx
   path: /msfbox
 
 resources: {}

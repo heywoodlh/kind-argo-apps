@@ -60,6 +60,9 @@ EOF
 	helm template apps/ | kubectl apply -f -
 
 	[[ -n ${random_string} ]] && cd ${working_dir} && rm -rf /tmp/argo-apps-${random_string}
+
+	## Install nginx-ingress with custom kind patches
+	kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
     
     fi
 }
