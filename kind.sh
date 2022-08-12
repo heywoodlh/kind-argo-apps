@@ -73,6 +73,15 @@ metadata:
   namespace: default
 data:
   kustomize.buildOptions: --enable-helm
+  application.instanceLabelKey: argocd.argoproj.io/instance
+  repositories: |
+    - type: helm
+      name: stable
+      url: https://charts.helm.sh/stable
+    - type: helm
+      name: argo-cd
+      url: https://argoproj.github.io/argo-helm
+  url: http://localhost:9080/argo
 EOF
     
     fi
