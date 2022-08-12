@@ -17,6 +17,6 @@ spec:
             port:
               number: 80
               number: {{ .Values.service.http.port }} 
-        path: {{ .Values.ingress.path }}
+        path: {{ .Values.ingress.path }}(/|$)(.*)
         pathType: Prefix
 {{- end }}
