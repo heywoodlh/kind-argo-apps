@@ -2,6 +2,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   name: {{ include "msfbox.fullname" . }}
   namespace: default
 spec:
@@ -13,7 +15,8 @@ spec:
           service:
             name: {{ include "msfbox.fullname" . }} 
             port:
+              number: 80
               number: {{ .Values.service.http.port }} 
-        path: /msfbox
+        path: {{ .Values.ingress.path }}
         pathType: Prefix
 {{- end }}
