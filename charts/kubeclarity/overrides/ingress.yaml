@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: kubeclarity
+  namespace: default
+spec:
+  ingressClassName: nginx 
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: kubeclarity-kubeclarity
+            port:
+              number: 8080 
+        path: /kubeclarity(/|$)(.*)
+        pathType: Prefix

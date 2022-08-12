@@ -1,0 +1,7 @@
+namespace: default
+helmCharts:
+- name: kubeclarity
+  releaseName: kubeclarity
+  namespace: default
+resources:
+  - overrides/ingress.yaml

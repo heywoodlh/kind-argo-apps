@@ -43,10 +43,6 @@ kubeclarity:
     service:
       type: ClusterIP
 
-  ingress:
-    enabled: true
-    paths: 
-      - /kubeclarity
     resources:
       requests:
         memory: "200Mi"
@@ -285,4 +281,8 @@ kubeclarity:
   
   # End of KubeClarity Postgres Values
   #######################################################################################
-  
+
+    ingress:
+      enabled: true
+      className: nginx
+      path: /kubeclarity
