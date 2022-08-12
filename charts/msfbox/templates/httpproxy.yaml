@@ -6,9 +6,9 @@ metadata:
   namespace: default
 spec:
   routes:
+    - services:
+      - name: {{ include "msfbox.fullname" . }} 
+        port: {{ .Values.service.http.port }}  
     - conditions:
       - prefix: {{ .Values.ingress.path }} 
-      services:
-        - name: {{ include "msfbox.fullname" . }} 
-          port: {{ .Values.service.http.port }}  
 {{- end }}
