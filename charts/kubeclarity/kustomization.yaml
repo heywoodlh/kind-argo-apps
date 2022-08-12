@@ -1,3 +1,9 @@
 namespace: default
+helmCharts:
+- name: kubeclarity
+  releaseName: kubeclarity
+  namespace: default
+  repo: https://openclarity.github.io/kubeclarity
+  valuesFile: ./values.yaml
 resources:
   - overrides/ingress.yaml
