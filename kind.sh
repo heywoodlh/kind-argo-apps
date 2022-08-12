@@ -63,6 +63,17 @@ EOF
 
 	## Install nginx-ingress with custom kind patches
 	kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+
+	## Enable kustomize with argo-cd
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: default
+data:
+  kustomize.buildOptions: --enable-helm
+EOF
     
     fi
 }
