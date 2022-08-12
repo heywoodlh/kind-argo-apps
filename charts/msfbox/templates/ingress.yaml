@@ -1,0 +1,19 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "msfbox.fullname" . }}
+  namespace: default
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: {{ include "msfbox.fullname" . }} 
+            port:
+              number: {{ .Values.service.http.port }} 
+        path: /msfbox
+        pathType: Prefix
+{{- end }}

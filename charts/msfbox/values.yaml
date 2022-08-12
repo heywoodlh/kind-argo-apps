@@ -45,6 +45,7 @@ service:
 
 ingress:
   enabled: true
+  className: contour
   path: /msfbox
 
 resources: {}
