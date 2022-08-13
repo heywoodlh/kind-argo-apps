@@ -17,6 +17,7 @@ argo-cd:
         - type: helm
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
+      kustomize.buildOptions: "--enable-helm"
     ingress:
       enabled: true 
       paths:
