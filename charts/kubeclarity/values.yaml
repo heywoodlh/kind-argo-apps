@@ -13,7 +13,7 @@ kubeclarity:
       ## Configure registry
       ##
       registry: "ghcr.io/openclarity"
-      tag: "v2.5.0"
+      tag: "v2.4.0"
       imagePullPolicy: Always
   
     ## Is this being installed under OpenShift restricted SCC?
