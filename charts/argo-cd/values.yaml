@@ -9,6 +9,7 @@ argo-cd:
   server:
     extraArgs:
       - --insecure
+      - --rootpath=/argo
     config:
       repositories: |
         - type: helm
