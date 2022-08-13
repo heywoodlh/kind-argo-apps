@@ -4,6 +4,5 @@ helmCharts:
   releaseName: kubeclarity
   namespace: default
   repo: https://openclarity.github.io/kubeclarity
-  valuesFile: ./values.yaml
 resources:
   - overrides/ingress.yaml
