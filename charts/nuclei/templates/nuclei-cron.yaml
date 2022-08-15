@@ -16,9 +16,11 @@ spec:
             command: [ "nuclei", "-config", "/config/nuclei.conf" ]
             volumeMounts:
               - name: nuclei-conf
-                mountPath: /config/nuclei.conf
+                mountPath: /config/
+                subPath: nuclei.conf
               - name: nuclei-target-list
-                mountPath: /config/target-list.txt
+                mountPath: /config/
+                subPath: target-list.txt
           restartPolicy: OnFailure
           volumes:
             - name: nuclei-conf
