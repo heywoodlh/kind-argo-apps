@@ -7,13 +7,13 @@ spec:
   containers:
     - name: test-container
       image: k8s.gcr.io/busybox
-      command: [ "ls", "/config" ]
+      command: [ "cat", "/config/target-list.txt", "/config/nuclei.conf" ]
       volumeMounts:
       - name: test-volume-1
-        mountPath: /config
+        mountPath: /config/target-list.txt
         subPath: target-list.txt
       - name: test-volume-2
-        mountPath: /config
+        mountPath: /config/nuclei.conf
         subPath: nuclei.conf
   restartPolicy: Never
   volumes:
