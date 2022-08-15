@@ -17,7 +17,7 @@ nuclei:
   cron: "0 0 * * Sun"
   
   config: |
-    interactsh-server: nuclei-interactsh # should match the name of interactsh.service.name 
+    interactsh-server: http://nuclei-interactsh # should match the name of interactsh.service.name 
     list: /config/target-list.txt 
     # Headers to include with all HTTP request
     #header:
