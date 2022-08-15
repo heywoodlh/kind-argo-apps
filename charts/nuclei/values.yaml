@@ -5,7 +5,7 @@
 replicaCount: 1
 
 nuclei:
-  enable: true
+  enabled: true
   image:
     repository: docker.io/projectdiscovery/nuclei
     pullPolicy: IfNotPresent

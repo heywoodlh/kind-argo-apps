@@ -13,24 +13,18 @@ spec:
           - name: {{ .Chart.Name }}-nuclei-cron
             image: "{{ .Values.nuclei.image.repository }}:{{ .Values.nuclei.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: IfNotPresent
-            command:
-            - nuclei
-            - -config /config/nuclei.conf
+            command: [ "nuclei", "-config", "/config/nuclei.conf" ]
             volumeMounts:
-            - name: nuclei-conf
-              mountPath: /config/nuclei.conf
-            {{- if .Values.nuclei.target_list -}}
-            - name: nuclei-target-list
-              mountPath: /config/target-list.txt
-            {{- end }}
+              - name: nuclei-conf
+                mountPath: /config/nuclei.conf
+              - name: nuclei-target-list
+                mountPath: /config/target-list.txt
           restartPolicy: OnFailure
           volumes:
             - name: nuclei-conf
               configMap:
                 name: nuclei-conf
-            {{- if .Values.nuclei.target_list -}}
             - name: nuclei-target-list
               configMap:
                 name: nuclei-target-list
-            {{- end }}
 {{- end }}

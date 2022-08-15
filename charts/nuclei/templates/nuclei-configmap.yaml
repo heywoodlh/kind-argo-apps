@@ -8,7 +8,6 @@ data:
 {{ .Values.nuclei.config | indent 4 }}
 
 ---
-{{- if .Values.nuclei.target_list -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -16,4 +15,3 @@ metadata:
 data:
   nuclei-target-list: |-
 {{ .Values.nuclei.target_list | indent 4 }}
-{{- end }}
