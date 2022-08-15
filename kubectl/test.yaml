@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: heywoodlh-test-pod 
+spec:
+  containers:
+    - name: test-container
+      image: k8s.gcr.io/busybox
+      command: [ "ls", "/config" ]
+      volumeMounts:
+      - name: test-volume-1
+        mountPath: /config
+        subPath: target-list.txt
+      - name: test-volume-2
+        mountPath: /config
+        subPath: nuclei.conf
+  restartPolicy: Never
+  volumes:
+    - name: test-volume-1
+      configMap:
+        name: "nuclei-target-list"
+    - name: test-volume-2
+      configMap:
+        name: "nuclei-conf"

@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: nuclei-conf
 data:
-  nuclei-configuration: |-
+  nuclei.conf: |-
 {{ .Values.nuclei.config | indent 4 }}
 
 ---
@@ -13,5 +13,5 @@ kind: ConfigMap
 metadata:
   name: nuclei-target-list
 data:
-  nuclei-target-list: |-
+  target-list.txt: |-
 {{ .Values.nuclei.target_list | indent 4 }}
