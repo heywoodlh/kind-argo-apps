@@ -14,7 +14,7 @@ nuclei:
   imagePullSecrets: []
   nameOverride: ""
   fullnameOverride: ""
-  cron: "*/10 * * * *"
+  cron: "0 0 * * Sun"
   
   config: |
     interactsh-server: nuclei-interactsh # should match the name of interactsh.service.name 
