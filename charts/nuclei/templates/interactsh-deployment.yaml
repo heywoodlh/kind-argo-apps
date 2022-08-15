@@ -33,7 +33,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.interactsh.image.repository }}:{{ .Values.interactsh.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.interactsh.image.pullPolicy }}
-          command: ["interactsh-server -skip-acme"]
+          command: ["interactsh-server", "-skip-acme"]
           ports:
             - name: http
               containerPort: 80
