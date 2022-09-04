@@ -12,7 +12,7 @@ spec:
           containers:
           - name: {{ .Chart.Name }}-nuclei-cron
             image: "{{ .Values.nuclei.image.repository }}:{{ .Values.nuclei.image.tag | default .Chart.AppVersion }}"
-            imagePullPolicy: IfNotPresent
+            imagePullPolicy: {{ .Values.nuclei.image.pullPolicy }}
             command: [ "nuclei", "-config", "/config/nuclei.conf" ]
             volumeMounts:
               - name: nuclei-conf
