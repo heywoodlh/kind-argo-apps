@@ -208,7 +208,7 @@ grafana:
     pathType: Prefix
   
     hosts:
-      - '*'
+      - 'localhost'
     ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
     extraPaths: []
     # - path: /*
