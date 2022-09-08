@@ -13,7 +13,7 @@ falco:
     # -- The image repository to pull from
     repository: falcosecurity/falco-no-driver
     # -- The image tag to pull. Overrides the image tag whose default is the chart appVersion.
-    tag: ""
+    tag: "master"
   
   # -- Secrets containing credentials when pulling from private/secure registries.
   imagePullSecrets: []

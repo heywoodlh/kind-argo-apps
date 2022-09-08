@@ -41,6 +41,11 @@ nodes:
   - containerPort: 443
     hostPort: 9443
     protocol: TCP
+  extraMounts:
+  - hostPath: /dev
+    containerPath: /dev
+  - hostPath: /var/run/docker.sock
+    containerPath: /var/run/docker.sock
 EOF
 
     create_status=$?
