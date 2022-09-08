@@ -1,0 +1,7 @@
+apiVersion: v2
+name: falco-exporter
+version: 0.1.0
+dependencies:
+  - name: falco-exporter
+    version: 0.8.2
+    repository: https://falcosecurity.github.io/charts 
