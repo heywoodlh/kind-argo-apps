@@ -71,3 +71,11 @@ Run the following command to access Kubeclarity at http://localhost:8080
 ```
 kubectl port-forward svc/kubeclarity-kubeclarity 8080:8080
 ```
+
+### Grafana:
+
+Run the following command to get the password for the `admin` user in Grafana:
+
+```
+kubectl get secret grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
