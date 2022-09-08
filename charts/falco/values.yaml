@@ -13,7 +13,7 @@ falco:
     # -- The image repository to pull from
     repository: falcosecurity/falco-no-driver
     # -- The image tag to pull. Overrides the image tag whose default is the chart appVersion.
-    tag: "master"
+    tag: ""
   
   # -- Secrets containing credentials when pulling from private/secure registries.
   imagePullSecrets: []
@@ -170,7 +170,7 @@ falco:
     # Always set it to false when using Falco with plugins.
     enabled: true
     # -- Tell Falco which driver to use. Available options: module (kernel driver) and ebpf (eBPF probe).
-    kind: module
+    kind: ebpf
     # -- Configuration section for ebpf driver.
     ebpf:
       # -- Path where the eBPF probe is located. It comes handy when the probe have been installed in the nodes using tools other than the init
