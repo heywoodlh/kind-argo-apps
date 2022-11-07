@@ -30,7 +30,7 @@ kafka-operator:
       name: kafka-operator
   
   webhook:
-    enabled: true
+    enabled: false
   #  serverPort:
   #  tls:
   #    certDir: ""
