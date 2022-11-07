@@ -1,0 +1,7 @@
+apiVersion: v2
+name: zookeeper-operator 
+version: 0.1.0
+dependencies:
+  - name: zookeeper-operator
+    version: 0.2.14
+    repository: https://charts.pravega.io 

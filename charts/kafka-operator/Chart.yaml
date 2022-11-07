@@ -1,0 +1,7 @@
+apiVersion: v2
+name: kafka-operator 
+version: 0.1.0
+dependencies:
+  - name: kafka-operator
+    version: 0.21.2
+    repository: https://kubernetes-charts.banzaicloud.com/ 

@@ -56,6 +56,9 @@ EOF
 	[[ -e ${script_root_dir}/apps/templates/root.yaml ]] && cd ${script_root_dir}
 	[[ -e ${script_root_dir}/apps/templates/root.yaml ]] || working_dir=$(pwd) && random_string=${RANDOM} && git clone https://github.com/heywoodlh/argo-apps "/tmp/argo-apps-${random_string}" && cd "/tmp/argo-apps-${random_string}"
 
+	# Create kafka namespace
+	kubectl create namespace kafka
+
 	# Install argo-cd 
 	helm repo list | grep -q argo-cd || helm repo add argo-cd https://argoproj.github.io/argo-helm
 	helm dep update charts/argo-cd
