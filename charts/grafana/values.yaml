@@ -646,7 +646,7 @@ grafana:
     apiVersion: ""
     ## @param ingress.hostname When the ingress is enabled, a host pointing to this will be created
     ##
-    #hostname: localhost
+    hostname: localhost
     ## @param ingress.path Default path for the ingress resource
     ## The Path to Grafana. You may need to set this to '/*' in order to use this with ALB ingress controllers.
     ##
@@ -675,9 +675,7 @@ grafana:
     ## - name: grafana.local
     ##   path: /
     ##
-    extraHosts:
-    - name: localhost
-      path: / 
+    extraHosts: []
     ## @param ingress.extraPaths Any additional arbitrary paths that may need to be added to the ingress under the main host.
     ## For example: The ALB ingress controller requires a special rule for handling SSL redirection.
     ## extraPaths:
