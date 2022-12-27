@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atomic-red-team
+  labels:
+    app: atomic-red-team
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: atomic-red-team
+  template:
+    metadata:
+      labels:
+        app: atomic-red-team
+    spec:
+      containers:
+      - name: atomicred
+        image: heywoodlh/atomic-red-team:latest
+        command: ["sleep", "3560d"]
+        securityContext:
+          privileged: true
+      nodeSelector:
+        kubernetes.io/os: linux
