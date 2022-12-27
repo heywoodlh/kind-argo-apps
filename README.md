@@ -1,4 +1,4 @@
-## argo-apps 
+## kind-argo-apps 
 
 This is a demo Argo app of apps for testing meant to be deployed using [kind](https://kind.sigs.k8s.io/). As a demo environment, it will install multiple applications.
 

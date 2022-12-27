@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: charts/argo-cd
-    repoURL: https://github.com/heywoodlh/argo-apps.git
+    repoURL: https://github.com/heywoodlh/kind-argo-apps.git
     targetRevision: HEAD
   syncPolicy:
     automated:

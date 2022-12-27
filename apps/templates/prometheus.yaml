@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: charts/prometheus
-    repoURL: https://github.com/heywoodlh/argo-apps
+    repoURL: https://github.com/heywoodlh/kind-argo-apps
     targetRevision: HEAD
   syncPolicy:
     automated:
