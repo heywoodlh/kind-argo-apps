@@ -13,8 +13,8 @@ This is a demo Argo app of apps for testing meant to be deployed using [kind](ht
 ## Usage:
 
 ```
-git clone https://github.com/heywoodlh/argo-apps
-cd argo-apps
+git clone https://github.com/heywoodlh/kind-argo-apps
+cd kind-argo-apps
 ./kind.sh
 ```
 
